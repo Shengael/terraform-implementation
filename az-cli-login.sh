@@ -1,1 +1,3 @@
-az login --service-principal --username="7e65e0c9-3866-41ad-84d2-cecde9376b8d" --password="e62be7a5-0b33-48fa-a350-1638fae04a91" --tenant="0a75ec92-a05e-4a6f-ab2a-674c66a5e2ab"
+#!/bin/bash
+# shellcheck disable=SC2154
+az login --service-principal --username="$TF_VAR_client_id" --password="$TF_VAR_client_secret" --tenant="$TF_VAR_tenant_id"
