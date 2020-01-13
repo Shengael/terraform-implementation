@@ -14,7 +14,35 @@ provider "azurerm" {
   client_secret   = var.client_secret
 }
 
-resource "azurerm_resource_group" "group" {
-  name     = "esgi-jpl"
-  location = "francecentral"
+resource "azurerm_resource_group" "db" {
+  name     = "jpldb"
+  location = "centralus"
+}
+
+resource "azurerm_resource_group" "bus" {
+  location = "centralus"
+  name     = "jplbus"
+}
+
+resource "azurerm_resource_group" "api" {
+  location = "centralus"
+  name     = "jplapi"
+}
+
+resource "azurerm_resource_group" "function" {
+  name     = "jplfunction"
+  location = "centralus"
+}
+
+resource "azurerm_resource_group" "front" {
+  location = "centralus"
+  name     = "jplfront"
+}
+
+
+locals {
+  db_name     = "${azurerm_resource_group.db.name}-mysql"
+  db_user     = "developerjpl"
+  db_password = "Esgi2020_ez"
+  image_path  = "jplproject/front"
 }

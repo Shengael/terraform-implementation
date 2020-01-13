@@ -1,1 +1,1 @@
-az login --service-principal --username="c271cc62-8a9d-46ee-b2f2-222f2425bb9c" --password="A0JTg0AR88C99MCnFGaa9tRqcXCxrRHEfVV3q6ArXsk=" --tenant="468baace-a6c5-46f4-832d-417248f38f5e"
+az login --service-principal --username="7e65e0c9-3866-41ad-84d2-cecde9376b8d" --password="e62be7a5-0b33-48fa-a350-1638fae04a91" --tenant="0a75ec92-a05e-4a6f-ab2a-674c66a5e2ab"

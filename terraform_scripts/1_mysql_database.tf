@@ -1,7 +1,7 @@
 resource "azurerm_mysql_server" "mysql" {
-  name                = "${azurerm_resource_group.group.name}-mysql-server"
-  location            = azurerm_resource_group.group.location
-  resource_group_name = azurerm_resource_group.group.name
+  name                = "${azurerm_resource_group.db.name}-mysql-server"
+  location            = azurerm_resource_group.db.location
+  resource_group_name = azurerm_resource_group.db.name
 
   sku {
     capacity = 2
@@ -16,29 +16,29 @@ resource "azurerm_mysql_server" "mysql" {
     geo_redundant_backup  = "Disabled"
   }
 
-  administrator_login = "developerjpl"
-  administrator_login_password = "Esgi2020_ez"
-  ssl_enforcement = "Enabled"
+  administrator_login = local.db_user
+  administrator_login_password = local.db_password
+  ssl_enforcement = "Disabled"
   version = "5.7"
 
   tags = {
     environment = "production"
-    group       = azurerm_resource_group.group.name
+    group       = azurerm_resource_group.db.name
   }
 }
 
 resource "azurerm_mysql_database" "mysql" {
-  name                = "${azurerm_resource_group.group.name}-mysql"
-  resource_group_name = azurerm_resource_group.group.name
+  name                = local.db_name
+  resource_group_name = azurerm_resource_group.db.name
   server_name         = azurerm_mysql_server.mysql.name
   charset             = "utf8"
   collation           = "utf8_unicode_ci"
 }
 
 resource "azurerm_mysql_firewall_rule" "mysql" {
-  name                = "${azurerm_resource_group.group.name}-mysql-firewall"
-  resource_group_name = azurerm_resource_group.group.name
+  name                = "${azurerm_resource_group.db.name}-mysql-firewall"
+  resource_group_name = azurerm_resource_group.db.name
   server_name         = azurerm_mysql_server.mysql.name
-  start_ip_address    = "212.195.35.58"
-  end_ip_address      = "212.195.35.58"
+  start_ip_address    = "0.0.0.0"
+  end_ip_address      = "255.255.255.255"
 }
