@@ -6,12 +6,16 @@ export TF_VAR_client_id=7e65e0c9-3866-41ad-84d2-cecde9376b8d
 export TF_VAR_client_secret=e62be7a5-0b33-48fa-a350-1638fae04a91
 
 if [ ! -d ./.terraform ]; then
-    ./terraform init ./terraform_scripts
+    ./terraform init -input=false ./terraform_scripts
+    echo "terraform initialized"
 fi
 
 az login --service-principal --username="$TF_VAR_client_id" --password="$TF_VAR_client_secret" --tenant="$TF_VAR_tenant_id"
+echo "connected to az cli"
 
-./terraform apply ./terraform_scripts -y
+echo "creating ressources"
+./terraform apply -input=false ./terraform_scripts
+echo "ressources created"
 
 back=https://github.com/Shinzukyo/battery-calculator-api.git
 function=https://github.com/Shengael/esgi-jpl-function.git
