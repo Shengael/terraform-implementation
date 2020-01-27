@@ -11,7 +11,7 @@ fi
 
 az login --service-principal --username="$TF_VAR_client_id" --password="$TF_VAR_client_secret" --tenant="$TF_VAR_tenant_id"
 
-./terraform apply ./terraform_scripts
+./terraform apply ./terraform_scripts -y
 
 back=https://github.com/Shinzukyo/battery-calculator-api.git
 function=https://github.com/Shengael/esgi-jpl-function.git
