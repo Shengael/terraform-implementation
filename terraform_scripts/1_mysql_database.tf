@@ -2,13 +2,7 @@ resource "azurerm_mysql_server" "mysql" {
   name                = "${azurerm_resource_group.db.name}-mysql-server"
   location            = azurerm_resource_group.db.location
   resource_group_name = azurerm_resource_group.db.name
-
-  sku {
-    capacity = 2
-    family = "Gen5"
-    name = "B_Gen5_2"
-    tier = "Basic"
-  }
+  sku_name = "B_Gen5_2"
 
   storage_profile {
     storage_mb = 5120
