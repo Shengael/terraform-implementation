@@ -35,6 +35,5 @@ override.tf.json
 # example: *tfplan*
 
 terraform
-env.sh
 
 # End of https://www.gitignore.io/api/terraform
