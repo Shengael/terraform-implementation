@@ -7,7 +7,7 @@ export TF_VAR_client_secret=e62be7a5-0b33-48fa-a350-1638fae04a91
 
 if [ ! -d ./.terraform ]; then
     echo 'test hehe'
-    ./terraform init
+    ./terraform init ./terraform_scripts
 fi
 #
 #az login --service-principal --username="$TF_VAR_client_id" --password="$TF_VAR_client_secret" --tenant="$TF_VAR_tenant_id"
