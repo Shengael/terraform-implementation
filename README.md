@@ -8,10 +8,22 @@ C'est un projet Terraform, fait par des étudiants de l'ESGI. Il permets de dép
 
 ## install
 
-You have to clone the project and add the Terraform executable at the root 
+#### linux installation
+
+The script will clone the project and install automatically terraform executable for linux 
+```
+curl -s https://raw.githubusercontent.com/Shengael/terraform-implementation/master/install.sh?token=AJJM7LU4GW7OTQO6YJZYKXC6HL3WM | sh
+cd terraform-implementation
+```
+#### manual installation
+```
+git clone https://github.com/Shengael/terraform-implementation.git
+```
+and add terraform executable at the project's root
 
 ## Run
-Use the example of the env.sh file to define your variables, necessary for the execution of the script 
+
+**Complete the environment variable on the top of the script run.sh before run the command**
 
 ```
 ./run.sh
