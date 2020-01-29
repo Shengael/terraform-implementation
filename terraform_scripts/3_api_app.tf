@@ -19,6 +19,7 @@ resource "azurerm_app_service" "main" {
 
   site_config {
     linux_fx_version = "NODE|10.14"
+    websockets_enabled = true
   }
 
   app_settings = {
