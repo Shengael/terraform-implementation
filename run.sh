@@ -17,7 +17,7 @@ echo "creating ressources"
 ./terraform apply -input=false ./terraform_scripts
 echo "ressources created"
 
-back=https://github.com/Shinzukyo/battery-calculator-api.git
+back=https://github.com/jpl-terraform/api.git
 function=https://github.com/Shengael/esgi-jpl-function.git
 front=https://github.com/Shinzukyo/battery-calcultator-front.git
 image_name=battery-front
