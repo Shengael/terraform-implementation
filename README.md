@@ -2,8 +2,7 @@
 
 > Deploy a complete infrastructure in a single command
 
-C'est un projet Terraform, fait par des étudiants de l'ESGI. Il permets de déployer une infrastructure complète en une seule commande. 
-
+It is a Terraform project, made by ESGI students. It allows you to deploy a complete infrastructure in a single command.
 ![Structure API](https://zupimages.net/up/20/03/lb2k.png)
 
 ## install
@@ -28,3 +27,17 @@ and add terraform executable at the project's root
 ```
 ./run.sh
 ```
+
+## Usage
+
+It is necessary to make a GET or POST request on the serverless function, this request must have the following scheme:
+
+```json
+{
+  "current_percentage": int (0 - 100)
+}
+```
+
+The serverless function will calculate the time remaining for the full charge of a device. 
+
+API and front communicate over Websocket you don't need reload the page after trigger the serveless function.
