@@ -5,6 +5,8 @@
 It is a Terraform project, made by ESGI students. It allows you to deploy a complete infrastructure in a single command.
 ![Structure API](https://zupimages.net/up/20/03/lb2k.png)
 
+This project has been realised by a three man team, which members are Joseph CHATELIN, Patrick ZHUANG and Luis VALDEZ
+
 ## install
 
 #### linux installation
